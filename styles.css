@@ -1,5 +1,6 @@
 :root {
-    --bg-color: #0a0a0c;
+    --bg-color-dark: #0a0a0c;
+    --bg-color-light: #121216;
     --text-color: #f0f0f0;
     --primary-color: #ff3366;
     --secondary-color: #7000ff;
@@ -15,7 +16,7 @@
 }
 
 body {
-    background-color: var(--bg-color);
+    background-color: var(--bg-color-dark);
     color: var(--text-color);
     overflow-x: hidden;
 }
@@ -133,8 +134,14 @@ body {
     color: #ccc;
 }
 
-/* Services */
-.services {
+/* Sections General */
+.section-dark {
+    background-color: var(--bg-color-dark);
+    padding: 5rem 5%;
+}
+
+.section-light {
+    background-color: var(--bg-color-light);
     padding: 5rem 5%;
 }
 
@@ -145,13 +152,22 @@ body {
     font-weight: 800;
 }
 
-.services-grid {
+.section-subtitle {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-top: -2rem;
+    margin-bottom: 3rem;
+    color: #aaa;
+}
+
+/* Grids & Cards */
+.grid-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
 }
 
-.service-card {
+.card {
     background: var(--glass-bg);
     border: 1px solid var(--glass-border);
     padding: 2rem;
@@ -161,7 +177,7 @@ body {
     backdrop-filter: blur(10px);
 }
 
-.service-card:hover {
+.card:hover {
     transform: translateY(-10px);
     background: rgba(255, 255, 255, 0.1);
 }
@@ -171,14 +187,67 @@ body {
     margin-bottom: 1rem;
 }
 
-.service-card h3 {
+.card h3 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
 }
 
-.service-card p {
+.card p {
     color: #aaa;
     font-weight: 300;
+}
+
+/* Amenities List */
+.amenities-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    list-style: none;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.amenities-list li {
+    background: rgba(255, 51, 102, 0.1);
+    border: 1px solid rgba(255, 51, 102, 0.3);
+    padding: 0.8rem 1.5rem;
+    border-radius: 30px;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+/* Footer */
+.footer {
+    background-color: #050505;
+    padding: 3rem 5% 1rem;
+    border-top: 1px solid var(--glass-border);
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer-section h3 {
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.footer-section p {
+    color: #aaa;
+    margin-bottom: 0.5rem;
+}
+
+.footer-bottom {
+    text-align: center;
+    color: #777;
+    border-top: 1px solid #222;
+    padding-top: 1rem;
+    font-size: 0.9rem;
 }
 
 /* Animations */
