@@ -123,7 +123,8 @@
         </div>
 
         <!-- Facility Showcases -->
-        <div class="showcase">
+        <div class="carousel-container relative w-full overflow-hidden">
+            <div class="carousel-track" id="facilityCarousel">
             <div class="showcase-item" data-speed="0.2">
                 <div class="showcase-img">
                     <img src="images/metropolitan_vigo_piscina_10-scaled.jpg" alt="Piscina" loading="lazy">
@@ -224,7 +225,148 @@
         </div>
     </section>
 
-    <!-- SPA / Wellness Section -->
+    
+    <!-- Horario Section -->
+    <section id="horario" class="section section-alt">
+        <div class="container">
+            <div class="section-header reveal-up">
+                <span class="section-tag">Planifica tu semana</span>
+                <h2 class="section-title">Horario de <em>Actividades</em></h2>
+                <p class="section-desc">Más de 800 horas mensuales de clases dirigidas con los mejores instructores.</p>
+            </div>
+            <div class="schedule-wrapper reveal-up delay-1">
+                <div class="schedule-grid glass-card">
+                    <div class="schedule-header">
+                        <div>Hora</div>
+                        <div>Lunes</div>
+                        <div>Martes</div>
+                        <div>Miércoles</div>
+                        <div>Jueves</div>
+                        <div>Viernes</div>
+                    </div>
+                    <div class="schedule-row">
+                        <div class="time">07:15</div>
+                        <div class="class-item cycling">Cycling</div>
+                        <div class="class-item crossmet">CrossMet</div>
+                        <div class="class-item yoga">Yoga</div>
+                        <div class="class-item fitness">Body Pump</div>
+                        <div class="class-item crossmet">CrossMet</div>
+                    </div>
+                    <div class="schedule-row">
+                        <div class="time">09:30</div>
+                        <div class="class-item aqua">AquaGym</div>
+                        <div class="class-item pilates">Pilates</div>
+                        <div class="class-item cycling">Cycling</div>
+                        <div class="class-item yoga">Yoga</div>
+                        <div class="class-item aqua">AquaGym</div>
+                    </div>
+                    <div class="schedule-row">
+                        <div class="time">14:15</div>
+                        <div class="class-item crossmet">CrossMet</div>
+                        <div class="class-item fitness">Gap</div>
+                        <div class="class-item cycling">Cycling</div>
+                        <div class="class-item crossmet">CrossMet</div>
+                        <div class="class-item pilates">Pilates</div>
+                    </div>
+                    <div class="schedule-row">
+                        <div class="time">18:30</div>
+                        <div class="class-item yoga">Yoga Vinyasa</div>
+                        <div class="class-item cycling">Cycling</div>
+                        <div class="class-item crossmet">CrossMet</div>
+                        <div class="class-item aqua">AquaGym</div>
+                        <div class="class-item fitness">Body Combat</div>
+                    </div>
+                    <div class="schedule-row">
+                        <div class="time">20:00</div>
+                        <div class="class-item fitness">Zumba</div>
+                        <div class="class-item crossmet">CrossMet</div>
+                        <div class="class-item yoga">Yoga</div>
+                        <div class="class-item cycling">Cycling</div>
+                        <div class="class-item pilates">Pilates</div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4 reveal-up delay-2" style="margin-top: 2rem;">
+                <a href="horario.pdf" class="btn-primary pdf-download-btn" target="_blank">
+                    <i class="fas fa-file-pdf"></i> Descargar Horario Completo PDF
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Premium Services Section -->
+    <section id="servicios" class="section">
+        <div class="container">
+            <div class="section-header reveal-up">
+                <span class="section-tag">Servicios Premium</span>
+                <h2 class="section-title">Atención <em>Integral</em></h2>
+                <p class="section-desc">Un equipo de profesionales multidisciplinar a tu disposición para alcanzar tus objetivos.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card glass-card reveal-up">
+                    <div class="service-icon"><i class="fas fa-dumbbell"></i></div>
+                    <h3>Entrenamiento Personal</h3>
+                    <p>Alcanza tus metas más rápido con nuestro equipo de entrenadores expertos en un estudio dedicado exclusivo.</p>
+                </div>
+                <div class="service-card glass-card reveal-up delay-1">
+                    <div class="service-icon"><i class="fas fa-apple-alt"></i></div>
+                    <h3>Nutrición y Dietética</h3>
+                    <p>Planes de alimentación personalizados y diagnósticos nutricionales para complementar tu entrenamiento de forma óptima.</p>
+                </div>
+                <div class="service-card glass-card reveal-up delay-2">
+                    <div class="service-icon"><i class="fas fa-spa"></i></div>
+                    <h3>Fisioterapia</h3>
+                    <p>Servicios profesionales de salud y recuperación para mantener tu cuerpo en su máximo nivel de rendimiento y bienestar.</p>
+                </div>
+                <div class="service-card glass-card reveal-up delay-3">
+                    <div class="service-icon"><i class="fas fa-magic"></i></div>
+                    <h3>Centro de Belleza</h3>
+                    <p>Tratamientos faciales y corporales con la más alta tecnología y aparatología del mercado.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Masterclasses & Surf -->
+    <section class="section cta-section" style="padding: clamp(4rem, 8vw, 6rem) 0;">
+        <div class="cta-parallax">
+            <div class="cta-bg" style="background-image: url('images/MASTER-02_SURF-393x700.jpg'); filter: brightness(0.45); background-position: center 20%;"></div>
+        </div>
+        <div class="container relative z-10">
+            <div class="glass-card reveal-up" style="max-width: 700px; margin: 0 auto; text-align: center; padding: 4rem 2.5rem;">
+                <span class="section-tag">Experiencias Únicas</span>
+                <h2 class="section-title-light">Masterclasses de <em>Surf</em></h2>
+                <p class="mb-4 text-gray-300" style="margin-bottom: 2rem;">Aprovecha nuestra ubicación privilegiada en Vigo. Únete a nuestras salidas outdoor y masterclasses de Surf exclusivas para socios, diseñadas para llevar tu entrenamiento físico a las olas del Atlántico.</p>
+                <button class="btn-gold" onclick="openBookingModal()">Información y Reservas</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- App Integration -->
+    <section id="app" class="section section-alt">
+        <div class="container">
+            <div class="app-integration" style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
+                <div class="app-content reveal-up">
+                    <span class="section-tag">Conectividad Total</span>
+                    <h2 class="section-title" style="margin-bottom: 1.5rem;">Tu Club en el <em>Bolsillo</em></h2>
+                    <p class="section-desc text-left mb-4" style="margin-bottom: 2rem;">Lleva tu entrenamiento al siguiente nivel con la App Club Metropolitan. Reserva clases, haz seguimiento de tus rutinas, conecta tus dispositivos biométricos y accede a tus planes nutricionales estés donde estés.</p>
+                    <ul class="app-features" style="list-style: none; margin-bottom: 2.5rem; display: flex; flex-direction: column; gap: 1rem;">
+                        <li><i class="fas fa-check-circle text-gold" style="margin-right: 10px;"></i> Reservas de actividades con 48h de antelación</li>
+                        <li><i class="fas fa-check-circle text-gold" style="margin-right: 10px;"></i> Seguimiento de biometría y progresos</li>
+                        <li><i class="fas fa-check-circle text-gold" style="margin-right: 10px;"></i> Acceso a la comunidad Metropolitan</li>
+                    </ul>
+                    <div class="app-buttons" style="display: flex; gap: 1rem;">
+                        <button class="btn-ghost" style="border: 1px solid rgba(255,255,255,0.2);"><i class="fab fa-apple"></i> App Store</button>
+                        <button class="btn-ghost" style="border: 1px solid rgba(255,255,255,0.2);"><i class="fab fa-google-play"></i> Google Play</button>
+                    </div>
+                </div>
+                <div class="app-image reveal-up delay-2" style="text-align: center;">
+                    <img src="images/06B.APP-copia.jpg" alt="Metropolitan App" style="border-radius: var(--radius-lg); max-width: 80%; transform: rotate(2deg); border: 1px solid var(--glass-border); box-shadow: 0 20px 40px rgba(0,0,0,0.4);">
+                </div>
+            </div>
+        </div>
+    </section>
+<!-- SPA / Wellness Section -->
     <section id="spa" class="section section-spa">
         <div class="spa-parallax" data-speed="0.3">
             <div class="spa-bg" style="background-image: url('images/metropolitan_vigo_spa_12-scaled.jpg')"></div>

@@ -1328,3 +1328,192 @@ em { font-family: var(--font-display); font-style: italic; color: var(--gold); }
 /* Utilities */
 .w-full { width: 100%; }
 .mt-4 { margin-top: 1rem; }
+
+
+/* ════════════════════════════
+   CAROUSEL "Conoce Tu Club"
+   ════════════════════════════ */
+.carousel-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.carousel-track {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+.carousel-track::-webkit-scrollbar {
+    display: none;
+}
+
+.carousel-track .showcase-item {
+    min-width: 100%;
+    scroll-snap-align: start;
+    flex: 0 0 100%;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: rgba(18, 18, 18, 0.7);
+    border: 1px solid var(--glass-border);
+    color: var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    font-size: 1.5rem;
+}
+.carousel-btn:hover {
+    background: var(--gold);
+    color: var(--black);
+    transform: translateY(-50%) scale(1.1);
+}
+.prev-btn { left: 20px; }
+.next-btn { right: 20px; }
+
+.carousel-dots {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 12px;
+    z-index: 10;
+}
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.dot.active {
+    background: var(--gold);
+    transform: scale(1.2);
+}
+
+/* ════════════════════════════
+   HORARIO GRID
+   ════════════════════════════ */
+.schedule-wrapper {
+    margin-top: 3rem;
+    overflow-x: auto;
+    padding-bottom: 1rem;
+}
+.schedule-grid {
+    min-width: 800px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    background: var(--glass-border);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+}
+.schedule-header, .schedule-row {
+    display: grid;
+    grid-template-columns: 80px repeat(5, 1fr);
+    gap: 2px;
+}
+.schedule-header div {
+    background: rgba(255,255,255,0.05);
+    padding: 1rem;
+    font-weight: 600;
+    text-align: center;
+    color: var(--gold);
+}
+.schedule-row div {
+    background: rgba(18, 18, 18, 0.8);
+    padding: 1rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 80px;
+    font-size: 0.9rem;
+    transition: background 0.3s ease;
+}
+.schedule-row div:hover:not(.time) {
+    background: rgba(201, 169, 110, 0.1);
+    cursor: default;
+}
+.schedule-row .time {
+    background: rgba(255,255,255,0.02);
+    font-weight: 500;
+    color: var(--muted);
+}
+.class-item { border-left: 3px solid transparent; }
+.class-item.cycling { border-left-color: #e74c3c; }
+.class-item.crossmet { border-left-color: #f1c40f; }
+.class-item.yoga { border-left-color: #9b59b6; }
+.class-item.fitness { border-left-color: #3498db; }
+.class-item.aqua { border-left-color: #00cec9; }
+.class-item.pilates { border-left-color: #2ecc71; }
+
+/* ════════════════════════════
+   SERVICES GRID
+   ════════════════════════════ */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+.service-card {
+    padding: 2.5rem 2rem;
+    text-align: center;
+    transition: transform 0.4s ease;
+}
+.service-card:hover {
+    transform: translateY(-10px);
+}
+.service-icon {
+    font-size: 2.5rem;
+    color: var(--gold);
+    margin-bottom: 1.5rem;
+}
+.service-card h3 {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    font-weight: 400;
+}
+.service-card p {
+    font-size: 0.9rem;
+    color: var(--muted);
+    line-height: 1.6;
+}
+
+@media (max-width: 992px) {
+    .app-integration {
+        grid-template-columns: 1fr !important;
+        text-align: center;
+    }
+    .app-features {
+        align-items: center;
+    }
+    .app-buttons {
+        justify-content: center;
+    }
+    .app-image img {
+        max-width: 100% !important;
+        margin-top: 3rem;
+    }
+}
+@media (max-width: 768px) {
+    .carousel-btn { width: 40px; height: 40px; font-size: 1rem; }
+}

@@ -204,3 +204,64 @@ function nextStep(stepNumber) {
         }
     });
 }
+
+/* ════════════════════════════
+   CAROUSEL LOGIC
+   ════════════════════════════ */
+document.addEventListener('DOMContentLoaded', () => {
+    const track = document.getElementById('facilityCarousel');
+    if (!track) return;
+
+    const items = Array.from(track.children);
+    const dotsContainer = document.getElementById('carouselDots');
+    let currentIndex = 0;
+
+    // Create dots
+    items.forEach((_, idx) => {
+        const dot = document.createElement('div');
+        dot.classList.add('dot');
+        if (idx === 0) dot.classList.add('active');
+        dot.addEventListener('click', () => {
+            moveToIndex(idx);
+        });
+        dotsContainer.appendChild(dot);
+    });
+
+    const dots = Array.from(dotsContainer.children);
+
+    function updateDots(index) {
+        dots.forEach(d => d.classList.remove('active'));
+        if(dots[index]) dots[index].classList.add('active');
+    }
+
+    function moveToIndex(index) {
+        if (index < 0) index = items.length - 1;
+        if (index >= items.length) index = 0;
+        
+        currentIndex = index;
+        const itemWidth = items[0].getBoundingClientRect().width;
+        
+        // Scroll smoothly to the item
+        track.scrollTo({
+            left: itemWidth * index,
+            behavior: 'smooth'
+        });
+        
+        updateDots(currentIndex);
+    }
+
+    window.moveCarousel = (direction) => {
+        moveToIndex(currentIndex + direction);
+    };
+
+    // Update active dot on manual scroll
+    track.addEventListener('scroll', () => {
+        const itemWidth = items[0].getBoundingClientRect().width;
+        const scrollPosition = track.scrollLeft;
+        const index = Math.round(scrollPosition / itemWidth);
+        if(index !== currentIndex) {
+            currentIndex = index;
+            updateDots(currentIndex);
+        }
+    });
+});
