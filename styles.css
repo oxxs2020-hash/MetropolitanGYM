@@ -1092,3 +1092,219 @@ em { font-family: var(--font-display); font-style: italic; color: var(--gold); }
     .spa-features { grid-template-columns: 1fr; }
     .footer-top { grid-template-columns: 1fr; }
 }
+
+/* ════════════════════════════
+   BOOKING MODAL (3-CLICK)
+   ════════════════════════════ */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    padding: 1rem;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    background: var(--surface);
+    width: 100%;
+    max-width: 500px;
+    border-radius: var(--radius);
+    padding: 2.5rem 2rem;
+    position: relative;
+    transform: scale(0.95) translateY(20px);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.modal-overlay.active .modal-content {
+    transform: scale(1) translateY(0);
+}
+
+.modal-close {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: var(--white);
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--transition);
+}
+
+.modal-close:hover {
+    background: var(--gold);
+    color: var(--black);
+    transform: rotate(90deg);
+}
+
+.modal-header h2 {
+    font-family: var(--font-display);
+    font-size: 2.2rem;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.booking-progress {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.progress-step {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: var(--surface-3);
+    color: var(--muted);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: 600;
+    transition: all var(--transition);
+}
+
+.progress-step.active {
+    background: var(--gold);
+    color: var(--black);
+    box-shadow: 0 0 15px rgba(201, 169, 110, 0.4);
+}
+
+.progress-step.completed {
+    background: rgba(201, 169, 110, 0.2);
+    color: var(--gold);
+}
+
+.progress-line {
+    height: 2px;
+    width: 40px;
+    background: var(--surface-3);
+    transition: all var(--transition);
+}
+
+.progress-line.active {
+    background: var(--gold);
+}
+
+.booking-step {
+    display: none;
+    animation: fadeIn 0.4s ease forwards;
+}
+
+.booking-step.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.booking-step h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1.2rem;
+    text-align: center;
+    font-weight: 500;
+}
+
+.plan-options {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.plan-btn {
+    background: var(--surface-2);
+    border: 1px solid var(--glass-border);
+    padding: 1.2rem;
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    cursor: pointer;
+    transition: all var(--transition);
+    text-align: left;
+    color: var(--white);
+}
+
+.plan-btn:hover {
+    background: rgba(201, 169, 110, 0.1);
+    border-color: rgba(201, 169, 110, 0.4);
+    transform: translateY(-2px);
+}
+
+.plan-icon {
+    font-size: 1.5rem;
+    color: var(--gold);
+}
+
+.plan-btn h4 {
+    font-size: 1.05rem;
+    margin-bottom: 0.2rem;
+}
+
+.plan-btn p {
+    font-size: 0.85rem;
+    color: var(--muted);
+}
+
+.glass-input {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--glass-border);
+    padding: 1rem 1.2rem;
+    border-radius: var(--radius-sm);
+    color: var(--white);
+    margin-bottom: 1rem;
+    font-family: var(--font-body);
+    transition: all var(--transition);
+}
+
+.glass-input:focus {
+    outline: none;
+    border-color: var(--gold);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.glass-input::placeholder {
+    color: var(--muted);
+}
+
+.success-icon {
+    font-size: 4rem;
+    color: var(--gold);
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.booking-step#step-3 p {
+    text-align: center;
+    color: var(--muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Utilities */
+.w-full { width: 100%; }
+.mt-4 { margin-top: 1rem; }

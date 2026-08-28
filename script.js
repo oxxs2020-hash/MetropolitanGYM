@@ -149,3 +149,58 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 });
+
+// ── 8. Booking Modal Logic (Global Scope) ──
+function openBookingModal() {
+    const modal = document.getElementById('booking-modal');
+    if (modal) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Prevent scrolling
+        // Reset to step 1 when opening
+        nextStep(1);
+    }
+}
+
+function closeBookingModal() {
+    const modal = document.getElementById('booking-modal');
+    if (modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+}
+
+function nextStep(stepNumber) {
+    // Hide all steps
+    document.querySelectorAll('.booking-step').forEach(step => {
+        step.classList.remove('active');
+    });
+    
+    // Show target step
+    const targetStep = document.getElementById('step-' + stepNumber);
+    if (targetStep) {
+        targetStep.classList.add('active');
+    }
+    
+    // Update progress bar
+    document.querySelectorAll('.progress-step').forEach(step => {
+        const num = parseInt(step.dataset.step);
+        if (num === stepNumber) {
+            step.classList.add('active');
+            step.classList.remove('completed');
+        } else if (num < stepNumber) {
+            step.classList.add('completed');
+            step.classList.remove('active');
+        } else {
+            step.classList.remove('active', 'completed');
+        }
+    });
+    
+    // Update progress lines
+    document.querySelectorAll('.progress-line').forEach((line, index) => {
+        if (index < stepNumber - 1) {
+            line.classList.add('active');
+        } else {
+            line.classList.remove('active');
+        }
+    });
+}

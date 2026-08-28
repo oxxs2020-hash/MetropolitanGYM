@@ -6,6 +6,35 @@
     <title>Metropolitan Vigo | Club & Spa de Lujo</title>
     <meta name="description" content="Metropolitan Vigo — el club deportivo y spa más exclusivo de Vigo. Más de 4.500 m² de instalaciones premium con vistas espectaculares al mar.">
     
+    <!-- SEO & Social Media -->
+    <meta property="og:title" content="Metropolitan Vigo | Club & Spa de Lujo">
+    <meta property="og:description" content="Metropolitan Vigo — el club deportivo y spa más exclusivo de Vigo. Más de 4.500 m² de instalaciones premium.">
+    <meta property="og:image" content="images/CABECERA_VIGO-1.jpg">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Preconnect & Preload for Performance -->
+    <link rel="preload" href="images/CABECERA_VIGO-1.jpg" as="image">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HealthAndBeautyBusiness",
+      "name": "Metropolitan Vigo",
+      "image": "images/CABECERA_VIGO-1.jpg",
+      "description": "Club deportivo y spa de lujo en Vigo.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Vigo",
+        "addressRegion": "Galicia",
+        "addressCountry": "ES"
+      }
+    }
+    </script>
+    
     <!-- Premium Typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -55,7 +84,7 @@
             </h1>
             <p class="hero-desc reveal-up delay-4">Más de 4.500 m² de instalaciones premium con vistas espectaculares al mar y a las Islas Cíes.</p>
             <div class="hero-actions reveal-up delay-5">
-                <a href="#" class="btn-gold">Alta Online</a>
+                <a href="#" class="btn-gold" onclick="openBookingModal(); return false;">Alta Online</a>
                 <a href="#instalaciones" class="btn-ghost">Descubrir <i class="fas fa-arrow-right"></i></a>
             </div>
         </div>
@@ -329,9 +358,68 @@
         <div class="container cta-content reveal-up">
             <h2>Empieza hoy tu<br><em>transformación</em></h2>
             <p>Únete al club deportivo y spa más exclusivo de Vigo.</p>
-            <a href="#" class="btn-gold btn-gold-lg">Alta Online</a>
+            <a href="#" class="btn-gold btn-gold-lg" onclick="openBookingModal(); return false;">Alta Online</a>
         </div>
     </section>
+
+    <!-- Booking Modal (3-Click Path) -->
+    <div id="booking-modal" class="modal-overlay">
+        <div class="modal-content glass-card">
+            <button class="modal-close" onclick="closeBookingModal()" aria-label="Cerrar"><i class="fas fa-times"></i></button>
+            <div class="modal-header">
+                <h2>Únete a<br><em>Metropolitan</em></h2>
+                <div class="booking-progress">
+                    <div class="progress-step active" data-step="1">1</div>
+                    <div class="progress-line"></div>
+                    <div class="progress-step" data-step="2">2</div>
+                    <div class="progress-line"></div>
+                    <div class="progress-step" data-step="3">3</div>
+                </div>
+            </div>
+            
+            <div class="modal-body">
+                <!-- Step 1: Selection -->
+                <div class="booking-step active" id="step-1">
+                    <h3>Selecciona tu Plan</h3>
+                    <div class="plan-options">
+                        <button class="plan-btn" onclick="nextStep(2)">
+                            <i class="fas fa-crown plan-icon"></i>
+                            <div>
+                                <h4>Club & Spa</h4>
+                                <p>Acceso total a instalaciones y balneario</p>
+                            </div>
+                        </button>
+                        <button class="plan-btn" onclick="nextStep(2)">
+                            <i class="fas fa-dumbbell plan-icon"></i>
+                            <div>
+                                <h4>Fitness Premium</h4>
+                                <p>Clases, sala fitness y piscina</p>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Step 2: Details -->
+                <div class="booking-step" id="step-2">
+                    <h3>Tus Datos</h3>
+                    <form id="booking-form" onsubmit="event.preventDefault(); nextStep(3);">
+                        <input type="text" placeholder="Nombre completo" required class="glass-input">
+                        <input type="email" placeholder="Correo electrónico" required class="glass-input">
+                        <input type="tel" placeholder="Teléfono" required class="glass-input">
+                        <button type="submit" class="btn-gold w-full mt-4">Continuar</button>
+                    </form>
+                </div>
+                
+                <!-- Step 3: Confirmation -->
+                <div class="booking-step" id="step-3">
+                    <div class="success-icon"><i class="fas fa-check-circle"></i></div>
+                    <h3>¡Solicitud Recibida!</h3>
+                    <p>Un asesor se pondrá en contacto contigo en breve para finalizar tu inscripción y darte la bienvenida al club.</p>
+                    <button class="btn-ghost mt-4" onclick="closeBookingModal()">Volver a Inicio</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="footer">
