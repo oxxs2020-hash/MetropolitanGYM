@@ -142,6 +142,26 @@ em { font-family: var(--font-display); font-style: italic; color: var(--gold); }
     color: var(--gold);
     transform: translateY(-2px);
 }
+
+.pdf-download-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-size: 0.95rem;
+    padding: 0.8rem 1.8rem;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    background: transparent;
+    border-radius: var(--radius-pill);
+    transition: all var(--transition);
+}
+
+.pdf-download-btn:hover {
+    background: rgba(201, 169, 110, 0.15);
+    color: var(--white);
+    transform: translateY(-2px);
+}
+
 .btn-ghost i { transition: transform 0.3s ease; }
 .btn-ghost:hover i { transform: translateX(4px); }
 
