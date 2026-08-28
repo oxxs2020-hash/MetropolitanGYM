@@ -1,119 +1,348 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Metropolitan GYM Vigo | Elevate Your Fitness</title>
-    <meta name="description" content="The most complete gym in Vigo, with spectacular views of the port and over 4,500 m2 of facilities.">
+    <title>Metropolitan Vigo | El gimnasio más completo de Vigo</title>
+    <meta name="description" content="Metropolitan Vigo es el gimnasio más completo de Vigo, con unas espectaculares vistas al puerto y más de 4.500 m2 de instalaciones.">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <nav class="navbar" id="navbar">
         <div class="logo">METROPOLITAN</div>
         <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#facilities">Facilities</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#amenities">Amenities</a></li>
+            <li><a href="#home">Inicio</a></li>
+            <li><a href="#info">Info</a></li>
+            <li><a href="#instalaciones">Instalaciones</a></li>
+            <li><a href="#servicios">Servicios</a></li>
         </ul>
-        <button class="btn-primary nav-btn">Join Now</button>
+        <div class="nav-actions">
+            <a href="#" class="nav-link-secondary">Área de socio</a>
+            <button class="btn-primary nav-btn">Únete al Club</button>
+        </div>
+        <div class="mobile-menu-btn"><i class="fas fa-bars"></i></div>
     </nav>
 
     <header id="home" class="hero">
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <h1 class="fade-up">REDEFINE YOUR <span class="highlight">LIMITS</span></h1>
-            <p class="fade-up delay-1">The most complete gym in Vigo, with spectacular views of the port and over 4,500 m2 of premium facilities.</p>
-            <button class="btn-primary fade-up delay-2">Start Your Journey</button>
+            <p class="subtitle fade-up">CLUB & SPA</p>
+            <h1 class="fade-up delay-1">VIGO</h1>
+            <p class="hero-description fade-up delay-2">
+                Metropolitan Vigo es el gimnasio más completo de Vigo, con unas espectaculares vistas al puerto y más de 4.500 m2 de instalaciones. 
+            </p>
+            <div class="hero-buttons fade-up delay-3">
+                <button class="btn-primary">Alta Online</button>
+                <button class="btn-secondary">Tour Virtual</button>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Explorar</span>
+            <i class="fas fa-chevron-down"></i>
         </div>
     </header>
 
-    <section id="facilities" class="section-dark">
-        <h2 class="section-title">World-Class Facilities</h2>
-        <div class="grid-container">
-            <div class="card">
-                <h3>Fitness Room</h3>
-                <p>Equipped with the latest technology, functional training, and cardio zones.</p>
+    <!-- Quick Info Bar -->
+    <div class="quick-info-bar" id="info">
+        <div class="info-item">
+            <i class="fas fa-clock"></i>
+            <div>
+                <h4>Horarios</h4>
+                <p>Mañana y Tarde</p>
             </div>
-            <div class="card">
-                <h3>SPA Balneario</h3>
-                <p>Jacuzzis, Turkish baths, ice fountains, and relaxation zones with views of the Cíes Islands.</p>
+        </div>
+        <div class="info-item">
+            <i class="fas fa-envelope"></i>
+            <div>
+                <h4>Contacto</h4>
+                <p>info.vigo@clubmetropolitan.com</p>
             </div>
-            <div class="card">
-                <h3>CrossMet Zone</h3>
-                <p>Dedicated area for high-intensity functional training and CrossMet classes.</p>
+        </div>
+        <div class="info-item">
+            <i class="fas fa-mobile-alt"></i>
+            <div>
+                <h4>App Metropolitan</h4>
+                <p>Tu club en tu mano</p>
             </div>
-            <div class="card">
-                <h3>Cycling Studio</h3>
-                <p>Immersive indoor cycling experiences with state-of-the-art bikes.</p>
+        </div>
+    </div>
+
+    <!-- Instalaciones (Facilities) -->
+    <section id="instalaciones" class="section-dark">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Instalaciones</h2>
+                <p class="section-subtitle">Más de 4.500 m2 equipados con la última tecnología y vistas de ensueño al parque natural de las Islas Cíes.</p>
             </div>
-            <div class="card">
-                <h3>Swimming Pool</h3>
-                <p>Indoor swimming pool for laps, aquagym, and recovery.</p>
+
+            <!-- Tab Navigation for Facilities -->
+            <div class="tabs">
+                <button class="tab-btn active" data-tab="fitness">Fitness & CrossMet</button>
+                <button class="tab-btn" data-tab="studios">Salas y Estudios</button>
+                <button class="tab-btn" data-tab="spa">SPA Balneario</button>
+                <button class="tab-btn" data-tab="outdoor">Outdoor</button>
             </div>
-            <div class="card">
-                <h3>Outdoor & Solarium</h3>
-                <p>Outdoor training zones and a sun terrace to relax and recharge.</p>
+
+            <!-- Tab Content -->
+            <div class="tab-content active" id="fitness">
+                <div class="facility-grid">
+                    <div class="facility-card">
+                        <div class="card-image bg-fitness"></div>
+                        <div class="card-info">
+                            <h3>Sala de Fitness</h3>
+                            <ul>
+                                <li>Zona de entrenamiento funcional</li>
+                                <li>Zona de musculación</li>
+                                <li>Zona cardiovascular</li>
+                                <li>Zona de estiramientos</li>
+                                <li>Pilates System Peak</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="facility-card">
+                        <div class="card-image bg-crossmet"></div>
+                        <div class="card-info">
+                            <h3>Zona CrossMet</h3>
+                            <p>Espacio dedicado al entrenamiento de alta intensidad.</p>
+                        </div>
+                    </div>
+                    <div class="facility-card">
+                        <div class="card-image bg-suspension"></div>
+                        <div class="card-info">
+                            <h3>Suspension Training</h3>
+                            <p>Estructuras completas para el trabajo en suspensión.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-content" id="studios">
+                <div class="facility-grid">
+                    <div class="facility-card">
+                        <div class="card-image bg-ep"></div>
+                        <div class="card-info">
+                            <h3>Estudio Entrenamientos Personales</h3>
+                            <p>Privacidad y exclusividad para conseguir tus objetivos.</p>
+                        </div>
+                    </div>
+                    <div class="facility-card">
+                        <div class="card-image bg-cycling"></div>
+                        <div class="card-info">
+                            <h3>Sala de Cycling</h3>
+                            <p>Las mejores bicicletas y sistemas audiovisuales inmersivos.</p>
+                        </div>
+                    </div>
+                    <div class="facility-card">
+                        <div class="card-image bg-clases"></div>
+                        <div class="card-info">
+                            <h3>Sala de Actividades Dirigidas</h3>
+                            <p>Más de 800h mensuales de actividades.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-content" id="spa">
+                <div class="spa-showcase">
+                    <div class="spa-text">
+                        <h3>SPA Balneario</h3>
+                        <p>Relájate en nuestro espectacular Spa con vistas al mar.</p>
+                        <ul class="spa-list">
+                            <li><i class="fas fa-check"></i> Jacuzzis & Piscinas de hidromasaje</li>
+                            <li><i class="fas fa-check"></i> Baño turco & Sauna</li>
+                            <li><i class="fas fa-check"></i> Ducha bitérmica, nebulizada y cubo</li>
+                            <li><i class="fas fa-check"></i> Fuente de hielo & Chorros cervicales</li>
+                            <li><i class="fas fa-check"></i> Cascadas & Bancos de burbujas</li>
+                            <li><i class="fas fa-check"></i> Piscina de natación</li>
+                        </ul>
+                    </div>
+                    <div class="spa-image bg-spa"></div>
+                </div>
+            </div>
+
+            <div class="tab-content" id="outdoor">
+                <div class="facility-grid">
+                    <div class="facility-card">
+                        <div class="card-image bg-outdoor"></div>
+                        <div class="card-info">
+                            <h3>Zona de Entrenamiento Outdoor</h3>
+                            <p>Entrena al aire libre sintiendo la brisa del mar.</p>
+                        </div>
+                    </div>
+                    <div class="facility-card">
+                        <div class="card-image bg-act-outdoor"></div>
+                        <div class="card-info">
+                            <h3>Actividades Dirigidas Outdoor</h3>
+                            <p>Disfruta de Tai-Chi y otras clases en nuestra terraza.</p>
+                        </div>
+                    </div>
+                    <div class="facility-card">
+                        <div class="card-image bg-solarium"></div>
+                        <div class="card-info">
+                            <h3>Terraza Solárium</h3>
+                            <p>Disfruta del sol y relájate tras tu entrenamiento.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Welcome Pack Feature -->
+    <section class="welcome-pack-banner">
+        <div class="container banner-content">
+            <div class="banner-text">
+                <h2>WELCOME PACK</h2>
+                <p>Descubre qué incluye tu Pack de bienvenida. La mejor manera de empezar tu entrenamiento y de conocer tu nuevo Club.</p>
+                <ul class="pill-list">
+                    <li>Entrevista Welcome to Wellness</li>
+                    <li>40% Entrenamiento Personal</li>
+                    <li>Diagnóstico Nutrición</li>
+                    <li>Invitación</li>
+                    <li>Sesión UVA</li>
+                </ul>
             </div>
         </div>
     </section>
 
-    <section id="services" class="section-light">
-        <h2 class="section-title">Premium Services</h2>
-        <div class="grid-container">
-            <div class="card">
-                <div class="card-icon">🎯</div>
-                <h3>Personal Training</h3>
-                <p>Achieve your goals with our expert coaches in our dedicated PT studio.</p>
+    <!-- Servicios (Services Accordion) -->
+    <section id="servicios" class="section-light">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Servicios</h2>
             </div>
-            <div class="card">
-                <div class="card-icon">🧘‍♀️</div>
-                <h3>Master Classes</h3>
-                <p>Over 800 hours monthly of directed activities including Yoga, Pilates, and HIIT.</p>
-            </div>
-            <div class="card">
-                <div class="card-icon">🥗</div>
-                <h3>Nutrition & Dietetics</h3>
-                <p>Personalized meal plans and nutritional diagnostics to complement your training.</p>
-            </div>
-            <div class="card">
-                <div class="card-icon">💆‍♂️</div>
-                <h3>Physiotherapy</h3>
-                <p>Professional health and recovery services to keep your body at its peak.</p>
+            
+            <div class="accordion-container">
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        Asesoramiento & Actividades
+                        <i class="fas fa-plus"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="accordion-inner">
+                            <h4>Asesoramiento técnico permanente en Fitness</h4>
+                            <p>Nuestros técnicos están siempre a tu disposición en la sala.</p>
+                            <h4>Actividades Dirigidas</h4>
+                            <p>Amplia parrilla de horarios para todas las intensidades.</p>
+                            <h4>Master Classes y Actividades Especiales</h4>
+                            <p>Salidas Outdoor, esquí, catas saludables y ponencias de expertos.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        Salud & Nutrición
+                        <i class="fas fa-plus"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="accordion-inner">
+                            <h4>Entrenamientos Personales</h4>
+                            <p>Consigue todos tus objetivos con el entrenamiento que mejor se adapta a ti.</p>
+                            <h4>Nutrición y Dietética</h4>
+                            <p>Planes nutricionales adaptados para maximizar tus resultados.</p>
+                            <h4>Fisioterapia</h4>
+                            <p>Prevención y tratamiento de lesiones para mantenerte al 100%.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        Comodidad (Parking & Taquillas)
+                        <i class="fas fa-plus"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="accordion-inner">
+                            <h4>Taquillas de Alquiler</h4>
+                            <p>Disponibilidad de taquillas privadas de alquiler.</p>
+                            <h4>Parking Socios</h4>
+                            <p>Acceso a parking exclusivo para mayor comodidad en tus visitas.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="amenities" class="section-dark">
-        <h2 class="section-title">Complimentary Amenities</h2>
-        <p class="section-subtitle">Everything you need, included in your membership.</p>
-        <ul class="amenities-list">
-            <li>Welcome Pack</li>
-            <li>Towels & Shower Gel</li>
-            <li>Wi-Fi</li>
-            <li>Parking</li>
-            <li>GHD Hair Straighteners</li>
-            <li>Swimsuit Dryers</li>
-            <li>Safety Deposit Boxes</li>
-            <li>Laundry Service</li>
-        </ul>
+    <!-- Cortesias (Amenities) -->
+    <section class="section-dark">
+        <div class="container text-center">
+            <h2 class="section-title">Cortesías</h2>
+            <p class="section-subtitle mb-4">Todo tipo de detalles para que tu experiencia sea perfecta.</p>
+            
+            <div class="amenities-grid">
+                <div class="amenity-item"><i class="fas fa-wifi"></i> Wifi</div>
+                <div class="amenity-item"><i class="fas fa-newspaper"></i> Prensa</div>
+                <div class="amenity-item"><i class="fas fa-box-open"></i> Caja fuerte</div>
+                <div class="amenity-item"><i class="fas fa-battery-full"></i> Cargador de móvil</div>
+                <div class="amenity-item"><i class="fas fa-lock"></i> Taquillas</div>
+                <div class="amenity-item"><i class="fas fa-scroll"></i> Toallas</div>
+                <div class="amenity-item"><i class="fas fa-wind"></i> Secador de cabello</div>
+                <div class="amenity-item"><i class="fas fa-magic"></i> Planchas GHD</div>
+                <div class="amenity-item"><i class="fas fa-tint"></i> Secador bañadores</div>
+                <div class="amenity-item"><i class="fas fa-pump-soap"></i> Gel de ducha</div>
+                <div class="amenity-item"><i class="fas fa-spray-can"></i> Colonia</div>
+                <div class="amenity-item"><i class="fas fa-tshirt"></i> Lavandería</div>
+                <div class="amenity-item"><i class="fas fa-spa"></i> Amenities</div>
+                <div class="amenity-item"><i class="fas fa-weight"></i> Báscula</div>
+                <div class="amenity-item"><i class="fas fa-sun"></i> Solárium</div>
+                <div class="amenity-item"><i class="fas fa-parking"></i> Parking</div>
+            </div>
+        </div>
     </section>
 
+    <!-- Footer -->
     <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>Metropolitan Vigo</h3>
-                <p>The premium fitness experience.</p>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="logo mb-2">METROPOLITAN</div>
+                    <p class="text-gray">Club & Spa Vigo</p>
+                    <div class="social-links mt-3">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Nuestros Clubs</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Barcelona</a></li>
+                        <li><a href="#">Madrid</a></li>
+                        <li><a href="#">Bilbao</a></li>
+                        <li><a href="#">Zaragoza</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Corporativo</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Quiénes somos</a></li>
+                        <li><a href="#">¿Quieres trabajar con nosotros?</a></li>
+                        <li><a href="#">Zona de Prensa</a></li>
+                        <li><a href="#">Contacto</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Política de privacidad</a></li>
+                        <li><a href="#">Política de Cookies</a></li>
+                        <li><a href="#">Aviso legal</a></li>
+                    </ul>
+                </div>
             </div>
-            <div class="footer-section">
-                <h3>Contact</h3>
-                <p>Email: info.vigo@clubmetropolitan.com</p>
-                <p>Location: Vigo, Spain</p>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Club Metropolitan | Todos los derechos reservados.</p>
             </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 Club Metropolitan | All rights reserved</p>
         </div>
     </footer>
 
